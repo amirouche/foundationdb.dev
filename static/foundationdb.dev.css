@@ -45,3 +45,18 @@ blockquote {
 blockquote h2 {
     text-align: left;
 }
+
+div#header, div#footer {
+    background: #066ee1;
+    color: white;
+}
+
+div#footer li, div#footer ul {
+    margin: 5px;
+    list-style: none;
+}
+
+div#footer a {
+    color: white;
+    text-decoration: none;
+}
