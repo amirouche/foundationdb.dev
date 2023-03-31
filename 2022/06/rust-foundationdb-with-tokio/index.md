@@ -5,11 +5,7 @@ banner: https://unsplash.com/photos/fB4Zo2jPA3E/download?ixid=MnwxMjA3fDB8MXxzZW
 abstract: Rajiv M Ranganath will give a talk about the fdb-rs project, and the first Rust crate of the project that is the fdb crate. He will share with us how one can architect cloud scale applications using Rust Tokio and FoundationDB.
 ---
 
-<embed src="foundationdb-meetup-fdb-rs.pdf" width="1024" height="375" 
- type="application/pdf">
-
-[[download]](foundationdb-meetup-fdb-rs.pdf)
-
+## Summary
 
 [Rajiv M Ranganath](https://github.com/rajivr) will give a talk about
 the [fdb-rs](https://github.com/fdb-rs/fdb) project, and the first
@@ -24,3 +20,10 @@ It will be an online meetup on Google Meet, that will be recorded.
 RSVP at
 [meetup.com](https://www.meetup.com/foundationdb-online-meetup/), and
 be there :)
+
+## Slides
+
+<embed src="foundationdb-meetup-fdb-rs.pdf" width="1024" height="375" 
+ type="application/pdf">
+
+[[download]](foundationdb-meetup-fdb-rs.pdf)

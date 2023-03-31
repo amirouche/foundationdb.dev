@@ -31,3 +31,12 @@ have to worry about it.
 - The trade-off between auto-indexing all fields and indexing select fields.
 - Changes we made after performance testing.
 - How we plan to build indexes in the background with minimal conflicts.
+
+## Slides
+
+<embed src="foundationdb-meetup-building-secondary-indexes.pdf" width="1024" height="375" 
+ type="application/pdf">
+
+## Video
+
+<iframe width="1024" height="500" src="https://www.youtube.com/embed/qD1h5CyzL0A" title="FoundationDB Online Meetup 01: A developer-driven approach to building secondary indexes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

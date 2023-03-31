@@ -5,11 +5,6 @@ banner: https://unsplash.com/photos/fB4Zo2jPA3E/download?ixid=MnwxMjA3fDB8MXxzZW
 abstract: The FoundationDB Record Layer is an open source library that provides a record-oriented datastore with semantic similar to a relational database, implemented on top of FoundationDB. It is highly used within Apple by CloudKit, Apple’s cloud backend service to host billions of independent databases, many with a common schema.
 ---
 
-<embed src="foundationdb-meetup-record-layer-101.pdf" width="1024" height="375" 
- type="application/pdf">
-
-[[download]](foundationdb-meetup-record-layer-101.pdf)
-
 ## Bio
 
 Pierre Zemb is a Technical Leader working around distributed and
@@ -36,3 +31,10 @@ In this talk, we will dig into the paper and the library's concepts
 and feature. You will also discover how to use the library from a
 developer's point-of-view, with examples taken from ETCD-Layer and
 Record-Store.
+
+## Slides
+
+<embed src="foundationdb-meetup-record-layer-101.pdf" width="1024" height="375" 
+ type="application/pdf">
+
+[[download]](foundationdb-meetup-record-layer-101.pdf)
