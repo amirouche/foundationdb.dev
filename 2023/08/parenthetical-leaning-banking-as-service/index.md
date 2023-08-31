@@ -1,5 +1,5 @@
 ---
-title: Parenthetical leaning banking as a service
+title: Parenthetical leaning banking-as-a-service
 date: 2022-08-31
 banner: https://unsplash.com/photos/XN4T2PVUUgk/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjkzNTExOTg3fA&force=true&w=1920
 abstract: Griffin is a banking-as-a-service platform that use FoundationDB
