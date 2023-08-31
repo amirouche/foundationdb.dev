@@ -4,6 +4,11 @@ banner: /static/foundationdb-logo.png
 class: index
 ---
 
+> ## [Parenthetical leaning banking as a service](/2023/08/parenthetical-leaning-banking-as-service/index.html)
+>2022-08-31
+>
+> Griffin is a banking-as-a-service platform that use FoundationDB
+
 > ## [A developer-driven approach to building secondary indexes](/2023/03/developer-driven-approach-to-building-secondary-indexes/index.html)
 >2022-06-15
 >
