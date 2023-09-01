@@ -4,7 +4,12 @@ banner: /static/foundationdb-logo.png
 class: index
 ---
 
-> ## [Parenthetical leaning banking as a service](/2023/08/parenthetical-leaning-banking-as-service/index.html)
+> ## [Real-time first person Epic game](/2023/08/real-time-first-person-epic-game/index.html)
+>2022-08-31
+>
+> Scaling Fortnite is undoubtedly a testament to the services our engineers build. Every service must be built at “Fortnite Scale”, and so, even the most rudimentary applications quickly turn into a distributed system exercise.
+
+> ## [Parenthetical leaning banking-as-a-service](/2023/08/parenthetical-leaning-banking-as-service/index.html)
 >2022-08-31
 >
 > Griffin is a banking-as-a-service platform that use FoundationDB
