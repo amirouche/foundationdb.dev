@@ -7,6 +7,10 @@ from feedgen.feed import FeedGenerator
 import pytz
 
 
+def oneliner(s):
+    return ' '.join(s.split())
+
+
 def render(root, path):
     print('** reading {}'.format(path))
     directory = path.parent
@@ -20,9 +24,9 @@ def read(path):
         html = f.read()
     html = string2html(html)
     try:
-        title = html.xpath("/html/head/meta[@key='title']/@value")[0]
+        title = oneliner(html.xpath("/html/head/meta[@key='title']/@value")[0])
         date = html.xpath("/html/head/meta[@key='date']/@value")[0]
-        abstract = html.xpath("/html/head/meta[@key='abstract']/@value")[0]
+        abstract = oneliner(html.xpath("/html/head/meta[@key='abstract']/@value")[0])
         date = datetime.fromisoformat(date)
         date = date.replace(tzinfo=pytz.UTC)
         return path, title, date, abstract
@@ -64,7 +68,7 @@ def main():
     fg = FeedGenerator()
     fg.id('https://foundationdb.dev')
     fg.title('FoundationDB.dev')
-    
+
     fg.link( href='https://foundationdb.dev', rel='alternate' )
     fg.subtitle('The easy distributed database!')
     fg.language('en')
@@ -73,15 +77,15 @@ def main():
         fe = fg.add_entry()
         url = 'https://foundationdb.dev/{}'.format(path)
         fe.id(url)
-        fe.guid(url, permalink=True)        
+        fe.guid(url, permalink=True)
         fe.title(title)
         fe.link(href=url)
         fe.summary(abstract)
-        fe.description(abstract)        
+        fe.description(abstract)
         fe.published(date)
     fg.atom_file('atom.xml')
     fg.rss_file('rss.xml')
 
-    
+
 if __name__ == '__main__':
     main()

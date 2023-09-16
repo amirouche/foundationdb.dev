@@ -1,6 +1,6 @@
 ---
 title: A developer-driven approach to building secondary indexes
-date: 2022-06-15
+date: 2023-03-15
 banner: https://unsplash.com/photos/fB4Zo2jPA3E/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8OHx8c3R1ZGlvJTIwcmVjb3JkaW5nfGVufDB8fHx8MTY3OTgzMDgxNQ&force=true&w=1920
 abstract: Building secondary indexes for a database is always about balance. A balance between a system that scales and is easy to manage and an API that is intuitive and delightful for a developer to use.
 ---
@@ -34,7 +34,7 @@ have to worry about it.
 
 ## Slides
 
-<embed src="foundationdb-meetup-building-secondary-indexes.pdf" width="1024" height="375" 
+<embed src="foundationdb-meetup-building-secondary-indexes.pdf" width="1024" height="375"
  type="application/pdf">
 
 ## Video

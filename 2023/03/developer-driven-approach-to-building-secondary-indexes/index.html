@@ -4,14 +4,19 @@
         <meta charset="utf-8" />
         <meta name="generator" content="pandoc" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-        <title>foundationdb.dev · A developer-driven approach to building secondary indexes</title>
+        <title>foundationdb.dev · A developer-driven approach to
+building secondary indexes</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
         <link href="/static/foundationdb.dev.css" rel="stylesheet">
         <link rel="alternate" type="application/rss+xml" href="/atom.xml">
         <link rel="alternate" type="application/atom+xml" href="/rss.xml">
-        <meta key="date" value="2022-06-15"/>
-        <meta key="title" value="A developer-driven approach to building secondary indexes"/>
-        <meta key="abstract" value="Building secondary indexes for a database is always about balance. A balance between a system that scales and is easy to manage and an API that is intuitive and delightful for a developer to use."/>
+        <meta key="date" value="2023-03-15"/>
+        <meta key="title" value="A developer-driven approach to building
+secondary indexes"/>
+        <meta key="abstract" value="Building secondary indexes for a
+database is always about balance. A balance between a system that scales
+and is easy to manage and an API that is intuitive and delightful for a
+developer to use."/>
         <style>
          code{white-space: pre-wrap;}
          span.smallcaps{font-variant: small-caps;}
@@ -85,23 +90,44 @@
     </head>
     <body class="">
         <div id=header>
-            <h1>A developer-driven approach to building secondary indexes</h1>
+            <h1>A developer-driven approach to building secondary
+indexes</h1>
         </div>
         <div id=image>
             <center><img src="https://unsplash.com/photos/fB4Zo2jPA3E/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8OHx8c3R1ZGlvJTIwcmVjb3JkaW5nfGVufDB8fHx8MTY3OTgzMDgxNQ&amp;force=true&amp;w=1920" width=990</img></center>
         </div>
         <div id=root>
             <h2 id="bio">Bio</h2>
-            <p>Garren is a database engineer based in sunny South Africa. He works at Tigris Data, building a new modern data platform. He’s been a regular open source contributor over the years, contributing to the Apache CouchDB project, the Prisma ORM, and the PouchDB browser database, amongst others. When he’s not coding, you’re likely to find him in the outdoors - either climbing up a cliff face or taking photographs (not at the same time, however).</p>
+            <p>Garren is a database engineer based in sunny South
+            Africa. He works at Tigris Data, building a new modern data
+            platform. He’s been a regular open source contributor over
+            the years, contributing to the Apache CouchDB project, the
+            Prisma ORM, and the PouchDB browser database, amongst
+            others. When he’s not coding, you’re likely to find him in
+            the outdoors - either climbing up a cliff face or taking
+            photographs (not at the same time, however).</p>
             <h2 id="summary">Summary</h2>
-            <p>Building secondary indexes for a database is always about balance. A balance between a system that scales and is easy to manage and an API that is intuitive and delightful for a developer to use. Recently, at Tigris Data, we have been adding secondary indexes to our database and have been working hard to achieve a good balance between scale and developer delight. Tigris is a transactional document database that runs on top of FoundationDB and is compatible with MongoDB. In this talk, I cover four aspects we had to balance:1. Handling schema changes automatically in our secondary indexes so that users don’t have to worry about it.</p>
+            <p>Building secondary indexes for a database is always about
+            balance. A balance between a system that scales and is easy
+            to manage and an API that is intuitive and delightful for a
+            developer to use. Recently, at Tigris Data, we have been
+            adding secondary indexes to our database and have been
+            working hard to achieve a good balance between scale and
+            developer delight. Tigris is a transactional document
+            database that runs on top of FoundationDB and is compatible
+            with MongoDB. In this talk, I cover four aspects we had to
+            balance:1. Handling schema changes automatically in our
+            secondary indexes so that users don’t have to worry about
+            it.</p>
             <ul>
-            <li>The trade-off between auto-indexing all fields and indexing select fields.</li>
+            <li>The trade-off between auto-indexing all fields and
+            indexing select fields.</li>
             <li>Changes we made after performance testing.</li>
-            <li>How we plan to build indexes in the background with minimal conflicts.</li>
+            <li>How we plan to build indexes in the background with
+            minimal conflicts.</li>
             </ul>
             <h2 id="slides">Slides</h2>
-            <embed src="foundationdb-meetup-building-secondary-indexes.pdf" width="1024" height="375" 
+            <embed src="foundationdb-meetup-building-secondary-indexes.pdf" width="1024" height="375"
              type="application/pdf">
             <h2 id="video">Video</h2>
             <iframe width="1024" height="500" src="https://www.youtube.com/embed/qD1h5CyzL0A" title="FoundationDB Online Meetup 01: A developer-driven approach to building secondary indexes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
@@ -109,6 +135,7 @@
         </div>
         <div id="footer">
             <ul>
+                <li><a href="https://foundationdb.dev"><big><big><big>🧶</big></big></big> FoundationDB.dev</a></li>
                 <li><a href="https://www.meetup.com/fr-FR/foundationdb-online-meetup/">
                     <img height="32" width="32" src="/static/meetup-icon.webp" /> Join the meetup group
                 </a></li>

@@ -4,20 +4,25 @@ banner: /static/foundationdb-logo.png
 class: index
 ---
 
-> ## [Real-time first person Epic game](/2023/08/real-time-first-person-epic-game/index.html)
->2022-08-31
+> ## [Clouded Next Generation JavaScript](/2023/09/clouded-next-generation-javascript/index.html)
+>2023-09-16
 >
-> Scaling Fortnite is undoubtedly a testament to the services our engineers build. Every service must be built at “Fortnite Scale”, and so, even the most rudimentary applications quickly turn into a distributed system exercise.
+> How do you call a cloud that is good with JavaScript? I do not know! How do you call a database that is good with JavaScript?
+
+> ## [A developer-driven approach to building secondary indexes](/2023/03/developer-driven-approach-to-building-secondary-indexes/index.html)
+>2023-03-15
+>
+> Building secondary indexes for a database is always about balance. A balance between a system that scales and is easy to manage and an API that is intuitive and delightful for a developer to use.
 
 > ## [Parenthetical leaning banking-as-a-service](/2023/08/parenthetical-leaning-banking-as-service/index.html)
 >2022-08-31
 >
 > Griffin is a banking-as-a-service platform that use FoundationDB
 
-> ## [A developer-driven approach to building secondary indexes](/2023/03/developer-driven-approach-to-building-secondary-indexes/index.html)
->2022-06-15
+> ## [Real-time first person Epic game](/2023/08/real-time-first-person-epic-game/index.html)
+>2022-08-31
 >
-> Building secondary indexes for a database is always about balance. A balance between a system that scales and is easy to manage and an API that is intuitive and delightful for a developer to use.
+> Scaling Fortnite is undoubtedly a testament to the services our engineers build. Every service must be built at “Fortnite Scale”, and so, even the most rudimentary applications quickly turn into a distributed system exercise.
 
 > ## [Rust FoundationDB with Tokio](/2022/06/rust-foundationdb-with-tokio/index.html)
 >2022-06-15
