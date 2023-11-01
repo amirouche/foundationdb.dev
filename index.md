@@ -4,6 +4,11 @@ banner: /static/foundationdb-logo.png
 class: index
 ---
 
+> ## [Why, and how FoundationDB is moving to Swift](/2023/swift-as-successor-in-foundationdb/index.html)
+>2023-10-13
+>
+> 
+
 > ## [Clouded Next Generation JavaScript](/2023/09/clouded-next-generation-javascript/index.html)
 >2023-09-16
 >
@@ -14,15 +19,15 @@ class: index
 >
 > Building secondary indexes for a database is always about balance. A balance between a system that scales and is easy to manage and an API that is intuitive and delightful for a developer to use.
 
-> ## [Parenthetical leaning banking-as-a-service](/2023/08/parenthetical-leaning-banking-as-service/index.html)
->2022-08-31
->
-> Griffin is a banking-as-a-service platform that use FoundationDB
-
 > ## [Real-time first person Epic game](/2023/08/real-time-first-person-epic-game/index.html)
 >2022-08-31
 >
 > Scaling Fortnite is undoubtedly a testament to the services our engineers build. Every service must be built at “Fortnite Scale”, and so, even the most rudimentary applications quickly turn into a distributed system exercise.
+
+> ## [Parenthetical leaning banking-as-a-service](/2023/08/parenthetical-leaning-banking-as-service/index.html)
+>2022-08-31
+>
+> Griffin is a banking-as-a-service platform that use FoundationDB
 
 > ## [Rust FoundationDB with Tokio](/2022/06/rust-foundationdb-with-tokio/index.html)
 >2022-06-15
