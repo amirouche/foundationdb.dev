@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="pandoc" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <title>foundationdb.dev · FoundationDB as an identity graph
+database</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <link href="/static/foundationdb.dev.css" rel="stylesheet">
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml">
+        <link rel="alternate" type="application/atom+xml" href="/rss.xml">
+        <meta key="date" value="2024-06-26"/>
+        <meta key="title" value="FoundationDB as an identity graph
+database"/>
+        <meta key="abstract" value="This talk provides insights into a
+large-scale distributed system and deep dive into how FoundationDB is
+leveraged as the backing store for the Identity Graph system. Also dives
+into Adobe’s FoundationDB journey, including benchmarking FoundationDB
+in Azure and AWS clouds, Kubernetes vs VM deployment, fault-tolerance
+testing, and HA strategies."/>
+        <style>
+         code{white-space: pre-wrap;}
+         span.smallcaps{font-variant: small-caps;}
+         span.underline{text-decoration: underline;}
+         div.column{display: inline-block; vertical-align: top; width: 50%;}
+         div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+         ul.task-list{list-style: none;}
+         pre > code.sourceCode { white-space: pre; position: relative; }
+         pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+         pre > code.sourceCode > span:empty { height: 1.2em; }
+         code.sourceCode > span { color: inherit; text-decoration: inherit; }
+         div.sourceCode { margin: 1em 0; }
+         pre.sourceCode { margin: 0; }
+         @media screen {
+             div.sourceCode { overflow: auto; }
+         }
+         @media print {
+             pre > code.sourceCode { white-space: pre-wrap; }
+             pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+         }
+         pre.numberSource code
+         { counter-reset: source-line 0; }
+         pre.numberSource code > span
+         { position: relative; left: -4em; counter-increment: source-line; }
+         pre.numberSource code > span > a:first-child::before
+         { content: counter(source-line);
+             position: relative; left: -1em; text-align: right; vertical-align: baseline;
+             border: none; display: inline-block;
+             -webkit-touch-callout: none; -webkit-user-select: none;
+             -khtml-user-select: none; -moz-user-select: none;
+             -ms-user-select: none; user-select: none;
+             padding: 0 4px; width: 4em;
+             color: #aaaaaa;
+         }
+         pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+         div.sourceCode
+         {   }
+         @media screen {
+             pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+         }
+         code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+         code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+         code span.at { color: #7d9029; } /* Attribute */
+         code span.bn { color: #40a070; } /* BaseN */
+         code span.bu { } /* BuiltIn */
+         code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+         code span.ch { color: #4070a0; } /* Char */
+         code span.cn { color: #880000; } /* Constant */
+         code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+         code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+         code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+         code span.dt { color: #902000; } /* DataType */
+         code span.dv { color: #40a070; } /* DecVal */
+         code span.er { color: #ff0000; font-weight: bold; } /* Error */
+         code span.ex { } /* Extension */
+         code span.fl { color: #40a070; } /* Float */
+         code span.fu { color: #06287e; } /* Function */
+         code span.im { } /* Import */
+         code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+         code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+         code span.op { color: #666666; } /* Operator */
+         code span.ot { color: #007020; } /* Other */
+         code span.pp { color: #bc7a00; } /* Preprocessor */
+         code span.sc { color: #4070a0; } /* SpecialChar */
+         code span.ss { color: #bb6688; } /* SpecialString */
+         code span.st { color: #4070a0; } /* String */
+         code span.va { color: #19177c; } /* Variable */
+         code span.vs { color: #4070a0; } /* VerbatimString */
+         code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+        </style>
+    </head>
+    <body class="">
+        <div id=header>
+            <h1>FoundationDB as an identity graph database</h1>
+        </div>
+        <div id=image>
+            <center><img src="https://unsplash.com/photos/fB4Zo2jPA3E/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8OHx8c3R1ZGlvJTIwcmVjb3JkaW5nfGVufDB8fHx8MTY3OTgzMDgxNQ&amp;force=true&amp;w=1920" width=990</img></center>
+        </div>
+        <div id=root>
+            <h2 id="bio">Bio</h2>
+            <p>Aravind is a Software Architect, bringing over 14 years
+            of hands-on experience in the software industry, with the
+            last 8 years dedicated to advancing the Adobe Experience
+            Cloud. Aravind’s expertise encompasses the architecture,
+            design, and implementation of distributed systems, big data
+            solutions, stream processing, low-latency high-throughput
+            APIs, and real-time Java applications.</p>
+            <p>At Adobe, Aravind architected the Identity Graph system;
+            this system manages over 50 billion identities, enables
+            real-time ingestion of over 400,000 messages per second, and
+            supports millions of API lookups per second. Additionally,
+            Aravind spearheaded the evaluation and adoption of
+            FoundationDB into the Adobe Experience Platform. Aravind is
+            also passionate about mentorship and knowledge sharing,
+            speaking at technical conferences to contribute to the wider
+            software engineering community.</p>
+            <h2 id="summary">Summary</h2>
+            <p>Adobe Experience Platform’s core capability is delivering
+            personalized customer experiences at scale. Identity Graphs
+            are an integral concept to making this a reality. Adobe’s
+            Identity Graph system manages over 50 billion identities,
+            enables real-time ingestion of over 400,000 messages per
+            second, and supports millions of API lookups per second.</p>
+            <p>In this talk, Aravind will provide insights into this
+            large-scale distributed system and deep dive into how
+            FoundationDB is leveraged as the backing store for the
+            Identity Graph system. He will also dive into Adobe’s
+            FoundationDB journey, including benchmarking FoundationDB in
+            Azure and AWS clouds, Kubernetes vs VM deployment,
+            fault-tolerance testing, and HA strategies.</p>
+            <h2 id="video">Video</h2>
+            <iframe width="1024" height="500" src="https://www.youtube.com/embed/oYiFTBO67uU?si=MwR2RHrndDKY64pD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><a href="https://foundationdb.dev"><big><big><big>🧶</big></big></big> FoundationDB.dev</a></li>
+                <li><a href="https://www.meetup.com/fr-FR/foundationdb-online-meetup/">
+                    <img height="32" width="32" src="/static/meetup-icon.webp" /> Join the meetup group
+                </a></li>
+                <li><a href="/rss.xml"><img height="28" width="28" src="/static/rss.png" /> Subscribe to the feed</a></li>
+                <li><a href="https://www.youtube.com/@FoundationDBOnlineMeetup-lv2sv"><img height="32" width="32" src="/static/youtube.png" /> Watch the talks</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
